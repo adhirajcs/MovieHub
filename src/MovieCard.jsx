@@ -19,7 +19,7 @@ const MovieCard = ({movie}) => {
         </div>
 
         <div className="absolute bottom-0 right-0 left-0 p-6 bg-gray-700 transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0,1)]">
-          <span className="font-raleway uppercase text-xs tracking-wider font-medium text-gray-200">
+          <span className="uppercase text-xs tracking-wider font-medium text-gray-200">
             {movie.Type}
           </span>
           <h3 className="mt-1 text-orange-300">{movie.Title}</h3>
