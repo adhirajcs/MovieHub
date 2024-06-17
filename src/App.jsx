@@ -6,7 +6,7 @@ import MovieCard from "./MovieCard";
 // import "./App.css";
 import searchIcon from "./Assets/search.svg";
 
-const API_URL = `http://www.omdbapi.com?apikey=${
+const API_URL = `https://www.omdbapi.com?apikey=${
   import.meta.env.VITE_OMDB_API_KEY
 }`;
 
