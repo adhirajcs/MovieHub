@@ -4,7 +4,7 @@ import axios from "axios";
 import MovieCard from "./MovieCard";
 
 // import "./App.css";
-import searchIcon from "./search.svg";
+import searchIcon from "./Assets/search.svg";
 
 const API_URL = `http://www.omdbapi.com?apikey=${
   import.meta.env.VITE_OMDB_API_KEY
@@ -25,7 +25,6 @@ const App = () => {
     }
   };
 
-  
   useEffect(() => {
     searchMovies(searchTerm);
   }, []);
@@ -33,23 +32,28 @@ const App = () => {
   return (
     <>
       <div className="app flex flex-col items-center justify-center py-16 bg-gray-900 min-h-screen">
-        <h1 className="text-6xl tracking-wide bg-gradient-to-r from-orange-300 to-transparent bg-clip-text text-transparent">
-          MovieHub
-        </h1>
+      <a to="/" className="no-underline">
+          <h1 className="text-6xl tracking-wide bg-gradient-to-r from-blue-400 to-transparent bg-clip-text text-transparent cursor-pointer">
+            MovieHub
+          </h1>
+        </a>
 
-        <div className="search flex items-center justify-center w-3/4 my-16 p-6 rounded-full bg-gray-800 shadow-inner">
+        <form
+          className="search flex items-center justify-center w-3/4 my-16 p-6 rounded-full bg-gray-800 shadow-inner"
+          onSubmit={(event) => {
+            event.preventDefault();
+            searchMovies(searchTerm);
+          }}
+        >
+          <button type="submit" className="left-2">
+            <img src={searchIcon} className="w-5 h-5" />
+          </button>
           <input
-            className="flex-1 border-none text-xl font-raleway font-medium pr-4 outline-none text-gray-400 bg-gray-800"
+            className="flex-1 border-none text-xl font-medium pl-4 outline-none text-gray-400 bg-gray-800"
             placeholder="Search For Movies"
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <img
-            className="w-9 h-9 cursor-pointer"
-            src={searchIcon}
-            alt="Search"
-            onClick={() => searchMovies(searchTerm)}
-          />
-        </div>
+        </form>
 
         {movies?.length > 0 ? (
           <div className="container flex flex-wrap justify-center items-center w-full mt-12">
@@ -59,7 +63,9 @@ const App = () => {
           </div>
         ) : (
           <div className="empty flex justify-center items-center w-full mt-12">
-            <h2 className="text-xl text-orange-300 font-raleway">No Movies found</h2>
+            <h2 className="text-xl text-orange-300 font-raleway">
+              No Movies found
+            </h2>
           </div>
         )}
       </div>
