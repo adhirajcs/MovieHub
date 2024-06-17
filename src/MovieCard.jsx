@@ -1,11 +1,7 @@
-
-
-const MovieCard = ({movie}) => {
+const MovieCard = ({ movie }) => {
   return (
     <>
       <div className="movie w-80 h-[460px] m-6 relative rounded-xl overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0,1)] shadow-md hover:shadow-lg hover:scale-105">
-        
-
         <div className="relative w-full h-full transition-opacity duration-400 ease-[cubic-bezier(0.175,0.885,0,1)]">
           <img
             className="w-full h-full object-cover"
