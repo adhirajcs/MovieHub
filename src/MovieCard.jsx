@@ -6,9 +6,9 @@ const MovieCard = ({ movie }) => {
           <img
             className="w-full h-full object-cover"
             src={
-              movie.Poster !== "N/A"
+              movie.Poster && movie.Poster !== "N/A"
                 ? movie.Poster
-                : "https://via.placeholder.com/400"
+                : "https://placehold.co/400x600?text=No+Image"
             }
             alt={movie.Title}
           />
