@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import MovieCard from "./MovieCard";
+import ToolTip from "./ToolTip";
 
 // import "./App.css";
 import searchIcon from "./Assets/search.svg";
@@ -39,8 +40,11 @@ const App = () => {
 
   return (
     <>
-      {/* Title */}
-      <div className="app flex flex-col items-center justify-center py-16 bg-gray-900 min-h-screen">
+      <div className="app flex flex-col items-center justify-center py-16 bg-gray-900 min-h-screen relative">
+        {/* LinkedIn and gitHub icons */}
+        <ToolTip />
+
+        {/* Title */}
         <h1
           onClick={() => {
             setSearchTerm("");
@@ -57,6 +61,10 @@ const App = () => {
           className="search flex items-center justify-center w-3/4 my-16 p-6 rounded-full bg-gray-800 shadow-inner"
           onSubmit={(event) => {
             event.preventDefault();
+            if (searchTerm.trim() === "") {
+              alert("Please enter a Movie Name!");
+              return;
+            }
             searchMovies(searchTerm);
           }}
         >
@@ -71,8 +79,8 @@ const App = () => {
           />
         </form>
 
-        {/* Condition for Loader and "No Movies Found" error */}
         <div>
+          {/* Condition for Loader and "No Movies Found" error */}
           {loading ? (
             <div className="text-center">
               <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-blue-700 mx-auto"></div>
@@ -92,6 +100,7 @@ const App = () => {
                 </div>
               )}
 
+              
               {/* List of movie cards */}
               {movies?.length > 0 && (
                 <div className="container flex flex-wrap justify-center items-center w-full mt-12">
