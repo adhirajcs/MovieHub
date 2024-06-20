@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-import MovieCard from "./MovieCard";
-import ToolTip from "./ToolTip";
+import MovieCard from "./Components/MovieCard";
+import ToolTip from "./Components/ToolTip";
 
 // import "./App.css";
 import searchIcon from "./Assets/search.svg";
@@ -94,11 +94,11 @@ const App = () => {
               )}
 
               {/* Welcome Message */}
-              {!submitted && (
+              {/* {!submitted && (
                 <div className="empty flex justify-center items-center w-full mt-12">
                   <h2 className="text-xl text-blue-500">Welcome to MovieHub</h2>
                 </div>
-              )}
+              )} */}
 
               
               {/* List of movie cards */}
