@@ -7,16 +7,15 @@ const ToolTip = () => {
       <div className="absolute top-4 left-4 flex space-x-4">
         <div className="group relative flex items-center text-zinc-600 text-sm font-bold">
           <div className="shadow-md flex items-center group-hover:gap-2 bg-gradient-to-br from-blue-700 to-blue-800 p-0.5 rounded-md cursor-pointer duration-300">
+            <span className="text-gray-300 group-hover:text-gray-100">
+              <FaLinkedin size="32" />
+            </span>
             <a
               href="https://www.linkedin.com/in/adhirajsaha"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center"
             >
-              <span className="text-gray-300 hover:text-gray-200">
-                <FaLinkedin size="32" />
-              </span>
-
               <span className="text-[0px] group-hover:text-sm text-white duration-300 group-hover:mx-1 hover:text-gray-300">
                 Visit my LinkedIn
               </span>
@@ -47,16 +46,15 @@ const ToolTip = () => {
       <div className="absolute top-4 right-4 flex space-x-4">
         <div className="group relative flex items-center text-zinc-600 text-sm font-bold">
           <div className="shadow-md flex items-center group-hover:gap-2 bg-gradient-to-br from-gray-700 to-gray-800 p-1 rounded-full cursor-pointer duration-300">
+            <span className="text-gray-300 group-hover:text-gray-100">
+              <FaGithub size="32" />
+            </span>
             <a
               href="https://github.com/adhirajcs"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center"
             >
-              <span className="text-gray-300 hover:text-gray-200">
-                <FaGithub size="32" />
-              </span>
-
               <span className="text-[0px] group-hover:text-sm text-white duration-300 group-hover:mx-1 hover:text-gray-300">
                 Visit my GitHub
               </span>
